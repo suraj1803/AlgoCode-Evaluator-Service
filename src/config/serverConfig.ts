@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-export default {
-  PORT: Number(process.env.PORT) || 3000,
-};
+export const PORT = process.env.PORT || 3000;
+export const REDIS_PORT = process.env.REDIS_PORT || 6379;
+export const REDIS_HOST = process.env.REDIS_HOST || "127.0.0.1";

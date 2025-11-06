@@ -1,11 +1,11 @@
 import express, { Request, Response } from "express";
-import serverConfig from "./config/serverConfig";
 import apiRouter from "./routes";
+import { PORT } from "./config/serverConfig";
 
 const app = express();
 
 app.use("/api", apiRouter);
 
-app.listen(serverConfig.PORT, () => {
-  console.log(`Server started at: http://localhost:${serverConfig.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server started at: http://localhost:${PORT}`);
 });
