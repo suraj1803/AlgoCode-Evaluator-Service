@@ -13,5 +13,6 @@ app.listen(PORT, () => {
 
   sampleWorker("SampleQueue");
 
-  sampleQueueProducer("SampleJob", { "name": "Suraj" });
+  sampleQueueProducer("SampleJob", { name: "Suraj" }, 100);
+  sampleQueueProducer("SampleJob", { name: "Isan" }, 2);
 });
