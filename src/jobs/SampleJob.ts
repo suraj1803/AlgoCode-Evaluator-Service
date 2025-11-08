@@ -1,5 +1,6 @@
 import { Job } from "bullmq";
 import { IJob } from "../types/bullMQJobDefinition";
+import { logger } from "../config/logger.config";
 
 export default class SampleJob implements IJob {
   name: string;
@@ -11,11 +12,13 @@ export default class SampleJob implements IJob {
 
   handle = (job?: Job) => {
     if (job) {
-      console.log(job.name, job.id, job.data);
+      logger.info(
+        `Job Info : Name: ${job.name}, Id: ${job.id}, Data: ${JSON.stringify(job.data)}`,
+      );
     }
   };
 
   failed = (job?: Job) => {
-    console.log("Job failed: ", job ? job.id : "");
+    logger.error(`Job failed:  ${job ? job.id : ""}`);
   };
 }
