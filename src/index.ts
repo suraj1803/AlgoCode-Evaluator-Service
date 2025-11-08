@@ -8,6 +8,10 @@ import { logger } from "./config/logger.config";
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.text());
+
 app.use("/api", apiRouter);
 app.use("/api/queues/ui", serverAdapter.getRouter());
 
