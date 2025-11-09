@@ -6,8 +6,8 @@ import {
 import { NextFunction, Request, Response } from "express";
 import { ZodType } from "zod";
 
-export const validateCreateSubmissionDto =
-  (schema: ZodType<createSubmissionSchema>) =>
+export const validate =
+  (schema: ZodType<any>) =>
   (req: Request, res: Response, next: NextFunction) => {
     try {
       schema.parse({
