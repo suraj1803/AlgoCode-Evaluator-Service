@@ -16,7 +16,9 @@
   "dependencies": {
     "@bull-board/api": "^6.14.0",
     "@bull-board/express": "^6.14.0",
+    "@types/dockerode": "^3.3.45",
     "bullmq": "^5.63.0",
+    "dockerode": "^4.0.9",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "ioredis": "^5.8.2",
